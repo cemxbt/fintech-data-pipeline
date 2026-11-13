@@ -1,0 +1,30 @@
+{
+  "name": "fintech-data-pipeline",
+  "version": "1.0.0",
+  "description": "OHLCV market-data pipeline: streaming ingestion, validation, data-quality checks, technical indicators and idempotent loading into PostgreSQL.",
+  "license": "MIT",
+  "author": "Cem Ali Kayahan",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "migrate": "tsx src/cli/migrate.ts",
+    "pipeline": "tsx src/cli/run.ts",
+    "sample-data": "tsx scripts/generate-sample.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "pg": "^8.13.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "dotenv": "^16.4.7",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}
